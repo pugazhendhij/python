@@ -1,0 +1,12 @@
+FROM ubuntu
+MAINTAINER clickops
+RUN mkdir click
+WORKDIR ./click
+COPY ./docker.txt /click
+ADD ./sankeertha.tar /click
+RUN touch a.txt b.txt
+RUN hostname -i
+#RUN apt install -y openjdk-8-jdk
+RUN apt install -y docker.io
+EXPOSE 80
+
