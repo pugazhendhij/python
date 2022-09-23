@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>      
+        <title>LOGIN FORM </title>
+        <style>
+            body{
+                text-align: center;
+                color:crimson;
+                background-color: rgb(21, 243, 213);
+            }
+            .label{
+                color: orangered;
+                font-size: 120%;
+            }
+                       
+        </style>
+    </head>
+    <body>
+   
+      <form id="form">
+      <label>ID:</label>
+      <input type="text" id="id1"></br>
+      <label>NAME:</label>
+      <input type="text" id="id2"></br>
+      <label>DOB:</label>
+      <input type="text" id="id3"></br>
+      <label>GENDER:</label>
+      <input type="radio" id="id4" value="male">male
+      <input type="radio" id="id5" value="male">female</br>
+      <label>EDUCATION:</label>
+      <select>
+        <option value="bca">BCA</option>
+        <option value="bsc">BSC</option>
+        <option value="bct">BCT</option>
+        <option value="bit">BIT</option>
+        <option value="bcm">BCM</option>
+      </select></br>
+      <label>ADDRESS:</label>
+      <input type="text" id="id6"></br>
+      <button type="button" onclick="action1()">SUBMIT</button>
+      <button type="reset"  onclick="reset()">RESET</button>
+     
+
+      <script>
+        function action1   (){
+            let id=document.getElementById("id1").value;
+            let name=document.getElementById("id2").value;
+            let dob=document.getElementById("id3").value;
+            let gender=document.getElementById("id4").value;
+            let education=document.getElementById("id5").value;
+            let address=document.getElementById("id6").value;
+
+            let element=document.getElementById("table data");
+            element.innerHTML=element.innerHTML+`<tr><td>${id}</td><td>${name}</td><td>${dob}</td><td>${gender}</td><td>${eduaction}</td><td>${address}</td></tr>`;
+        }
+        function reset(){
+            document.getElementById("form").reset();
+        }
+       
+    </script>
+
+
+    
+    
+    <b><table id="table data" border="1">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>DOB</th>
+            <th>GENDER</th>
+            <th>EDUACTION</th>
+            <th>ADDRESS</th>
+            
+            </tr>
+            </table></b>
+        </form>
+    </body>
+</html>
