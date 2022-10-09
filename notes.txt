@@ -1,0 +1,118 @@
+django project creation:
+
+1.open django folder type in cmd
+2.django-admin startproject "projectname"
+3.type in cmd cd projectname
+4.then 
+   python manage.py startapp "app name"
+5.python manage.py runserver
+  copy the showing path ""http://127.0.0.1:8000/""
+6.open folder___>settings.py
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'bha'             ___> changes like this add app name 
+]
+
+7.now copy a (folder)____> urls.py to paste with (app)___> urls.py
+8.open (folder)___> urls open in IDLE
+       from django.contrib import admin
+       from django.urls import path,include
+
+       urlpatterns = [
+           path('admin/', admin.site.urls),
+           path('',include('bha.urls'))
+        ]
+      here -add a app name with urls
+
+9.now open app ___> view.py
+
+
+from django.shortcuts import render
+from django.http import HttpResponse
+
+def badd(request):
+    return HttpResponse("hello world!")
+
+# Create your views here.
+
+
+10.then open app ___> urls.py
+
+
+from django.contrib import admin
+from django.urls import path
+from .views import *
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('',badd)
+]
+
+
+11.now copy a path then browse it
+   
+
+
+
+
+*************************************************************************
+
+template creation 
+1.open templates(new) in projext name 
+2.insdie temp create htmlfile and enter 
+3.open folder setting.py and change in templates(DIRS)
+			TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+]
+
+
+4.and add the above import os in setting.py
+5.inside  app view.py
+def hello1(request):
+    return render(request,'h1.html')
+
+
+
+******************************************************************************
+scraping
+
+1.pip install requests
+2.now open IDLE> type 
+import requests, re
+
+3.open website and copy path
+
+url=['https://www.javatpoint.com/','https://www.w3schools.com/']
+
+
+now checking f5 for  requset [200]
+
+4.
+for i in url:
+    data = requests.get(i)
+    vari=data.text
+
+open("scarping.html",'w').write(vari)
+
+for getting datas into text and savewith (.html )extension
+
+
+
