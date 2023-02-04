@@ -10,3 +10,5 @@ RUN hostname -i
 RUN apt install -y docker.io
 EXPOSE 80
 
+print("hello")
+
